@@ -1,0 +1,31 @@
+/* Responsividade é você fazer com que sua aplicação funcione em vários tipos de tela. F12 tem todas as telas para testar. */
+
+@media (max-width: 1025px) { /* Regras para tela pequena, celular. Por enquanto tela está grande */
+    /*  Porém quando ela passar a ser menor que 1025px, irá passar a receber algumas regras*/
+    #page-home {
+        background-position-x: 75vw;
+    }
+
+    #page-home .content {
+        align-items: center;
+        text-align: center;
+    }
+
+    #page-home header a {
+        position: absolute; /* Conteúdos um acima do outro */
+        bottom: 15px;
+
+        left: 50%;
+        transform: translateX(-50%)
+    }
+
+    #page-home main {
+        align-items: center;
+    }
+}
+
+@media (max-height: 720px) {
+    #page-home {
+        background-position-y: 150px;
+    }
+}
