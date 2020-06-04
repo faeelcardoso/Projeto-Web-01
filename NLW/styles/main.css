@@ -6,6 +6,8 @@
 * { /* Pega todos os seletores */
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Pra arrumar o erro do padding com widht, que o padrão da borda é margin. Com isso coloca o padrão a borda */
+    /* Qualquer coisa apertar F12 e ver a ordem, padding(preenchimento) -> border -> margin */
 }
 
 html {
