@@ -125,3 +125,56 @@ form button {
 form button:hover { /* Hover é pra quando passar o mouse em cima */
     background-color: #2fb86e;
 }
+
+.items-grid {
+    display: grid; /* Diferente do flex, que é unidimensional, ou fica um doo lado do outro, ou ele fica abaixo  */
+    /* grid já é mais multidimensional */
+    grid-template-columns: 1fr 1fr 1fr; /* Ele mesmo calcula o tamanho da coluna */
+    /* Eu podia colocar o tamanho que eu quisesse tbm, tipo 3 colunas grandes, 200px 200px 200px */
+    gap: 16px; /* Quando trabalha com grid, tem a função gap que é parecida com a margin, ele separa cada elemento */
+    /* Com o margin seria um pouco mais complexo */
+}
+
+.items-grid li {
+    background-color: #f5f5f5;
+    list-style: none; /* remove os pontos */
+
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+
+    height: 180px;
+
+    padding: 32px 24px 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: center;
+
+    cursor: pointer; /* cursor */
+}
+
+.items-grid li span {
+    margin-top: 12px;
+
+    flex: 1; /* preencher sozinho */
+    
+    display: flex;
+    align-items: center;
+
+    color: var(--title-color);
+}
+
+.items-grid li.selected {
+    background: #e1faec;
+    border: 2px solid #34cb79; 
+}
+
+.items-grid li img,
+.items-grid li span {
+    pointer-events: none;
+    /* Para quando o usuário clicar tanto na img, quando no texto, mandar sempre o id, não a img ou texto kkk */
+    /* Dessa forma o target no JS sempre será o id do li */
+}
