@@ -1,11 +1,16 @@
+body {
+    background-color: white;
+}
+
 body::after { /* Para criar um novo backgroundcolor*/
     content: "";
-    position: fixed;
-    background: white;
-    top: 260px;
+    position: absolute;
+    background: #f0f0f5;
+    top: 0;
     right: 0;
     left: 0;
     bottom: 0;
+    height: 16rem; /* Com o REM idependente do zoom, o fundo fica estático */
     z-index: -1; /* Para ficar atrás de todos os conteúdos da página */
 }
 

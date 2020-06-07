@@ -68,6 +68,9 @@ function handleSelectedItem(event) {
     // efeito = class kkkkk
     const itemId = itemLi.dataset.id
 
+    // console.log('ITEM ID:', itemId)
+    // esse console loog é pra eu testar se está tudo funcionando ok tanto no front, quanto no back end
+
     // verificar se existem items selecionados, se sim
     // pegar os items selecionados
     const alreadySelected = selectedItems.findIndex(item => {
@@ -88,6 +91,9 @@ function handleSelectedItem(event) {
         // caso não esteja selecionado, add a seleção
         selectedItems.push(itemId)
     }
+
+    // console.log('selectedItems: ', selectedItems)
+    // esse console loog é pra eu testar se está tudo funcionando ok tanto no front, quanto no back end
 
     // atualizar o campo escondido com os dados selecionados
     collectedItems.value = selectedItems

@@ -8,12 +8,15 @@
 
 {% block styles %}
     <link rel="stylesheet" href="/styles/create-point.css">
+    <link rel="stylesheet" href="/styles/modal.css">
 {% endblock styles %}
 
 {% block content %}
     {% include "partials/page-header.html" %}
 
-    <form action="">
+    <form action="/savepoint" method="POST">
+        <!-- Padrão é GET, com method mudo pro POST para ocultar as inf na url-->
+        <!-- action é pra onde vai levar, qual página -->
 
         <h1>Registration of the collection point</h1>
         <!-- fieldset é tipo uma div, porém div é uma caixa sem significado -->
@@ -75,7 +78,7 @@
             </legend>
 
             <div class="items-grid">
-                <li data-id="1">
+                <li data-id="Lamps">
                     <!-- l1 é usado para fazer listas -->
                     <!-- data-id ajuda demais, pode colocar literalmente qualuqerr coisa depois do data-**-->
                     <!-- alternativa muito útil pra não deixar só id=1, porq pode dar bagunça dps-->
@@ -83,27 +86,27 @@
                     <span>Lamps</span>
                 </li>
 
-                <li data-id="2">
+                <li data-id="Batteries">
                     <img src="/assets/baterias.svg" alt="Batteries">
                     <span>Batteries</span>
                 </li>
 
-                <li data-id="3">
+                <li data-id="Papersider">
                     <img src="/assets/lampadas.svg" alt="Papersider">
                     <span>Papersider</span>
                 </li>
 
-                <li data-id="4">
+                <li data-id="Electronic Waste">
                     <img src="/assets/eletronicos.svg" alt="Electronic Waste">
                     <span>Electronic Waste</span>
                 </li>
 
-                <li data-id="5">
+                <li data-id="Organic Waste">
                     <img src="/assets/organicos.svg" alt="Organic Waste">
                     <span>Organic Waste</span>
                 </li>
 
-                <li data-id="6">
+                <li data-id="Cooking Oil">
                     <img src="/assets/oleo.svg" alt="Cooking Oil">
                     <span>Cooking Oil</span>
                 </li>
@@ -118,6 +121,12 @@
     </form>
 
 {% endblock content %}
+
+{% block modal %}
+    {% if saved %}
+        {% include "partials/point-created.html" %}
+    {% endif %}
+{% endblock modal %}
 
 {% block scripts %}
     <script src="/scripts/create-point.js"></script>
