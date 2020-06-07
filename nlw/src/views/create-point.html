@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% set pageId = "page-create-point" %}
+
+{% block title %}
+    <title>Create a collection point</title>
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/create-point.css">
+{% endblock styles %}
+
+{% block content %}
+    {% include "partials/page-header.html" %}
+
+    <form action="">
+
+        <h1>Registration of the collection point</h1>
+        <!-- fieldset é tipo uma div, porém div é uma caixa sem significado -->
+        <!-- o fieldset já vai agrupar os campos, vai ser uma caixa com coleção de campos-->
+        <fieldset>
+            <legend>
+                <h2>Entity data</h2>
+            </legend>
+
+            <div class="field-group">
+                <div class="field">
+                    <label for="name">Entity name:</label>
+                    <input type="text" name="name" required="required">
+                    <!-- com o required eu obrigo o usuário a preencher esse campo-->
+                </div>
+                <div class="field">
+                    <label for="name">Entity image:</label>
+                    <input type="url" name="image" placeholder="http://" required="required">
+                </div>
+            </div>
+
+            <div class="field-group">
+                <div class="field">
+                    <label for="address">Address:</label>
+                    <input type="text" name="address" required="required">
+                </div>
+
+                <div class="field">
+                    <label for="address2">Number/Complement:</label>
+                    <input type="number" name="address2" required="required">
+                </div>
+            </div>
+
+            <div class="field-group">
+                <div class="field">
+                    <label for="state">State:</label>
+                    <select name="uf" required="required">
+                        <option value="">Select the state</option>
+                    </select>
+
+                    <input type="hidden" name="state">
+                    <!-- para esconder o state -->
+                </div>
+
+                <div class="field">
+                    <label for="city">City:</label>
+                    <select name="city" disabled="disabled" required="required">
+                        <!-- Com o disabled eu bloqueio a pessoa clicar em cidade, antes dela selecionar o seu estado-->
+                        <option value="">Select the city</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                <h2>Collection items</h2>
+                <span>Select one or more items below</span>
+            </legend>
+
+            <div class="items-grid">
+                <li data-id="1">
+                    <!-- l1 é usado para fazer listas -->
+                    <!-- data-id ajuda demais, pode colocar literalmente qualuqerr coisa depois do data-**-->
+                    <!-- alternativa muito útil pra não deixar só id=1, porq pode dar bagunça dps-->
+                    <img src="/assets/lampadas.svg" alt="Lamps">
+                    <span>Lamps</span>
+                </li>
+
+                <li data-id="2">
+                    <img src="/assets/baterias.svg" alt="Batteries">
+                    <span>Batteries</span>
+                </li>
+
+                <li data-id="3">
+                    <img src="/assets/lampadas.svg" alt="Papersider">
+                    <span>Papersider</span>
+                </li>
+
+                <li data-id="4">
+                    <img src="/assets/eletronicos.svg" alt="Electronic Waste">
+                    <span>Electronic Waste</span>
+                </li>
+
+                <li data-id="5">
+                    <img src="/assets/organicos.svg" alt="Organic Waste">
+                    <span>Organic Waste</span>
+                </li>
+
+                <li data-id="6">
+                    <img src="/assets/oleo.svg" alt="Cooking Oil">
+                    <span>Cooking Oil</span>
+                </li>
+            </div>
+
+            <input type="hidden" name="items">
+            <!-- com o hidden eu escondo o input pro usuário e envio pro backend que isso são os itens que ele coleta -->
+        </fieldset>
+
+        <!-- Assim que clicar no botão vai fazer um submit do form, ou seja, irá enviar esse formulário-->
+        <button type="submit">Register collection point</button>
+    </form>
+
+{% endblock content %}
+
+{% block scripts %}
+    <script src="/scripts/create-point.js"></script>
+{% endblock scripts %}

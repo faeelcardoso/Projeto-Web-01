@@ -1,0 +1,23 @@
+<div id="modal" class="hide">
+    <!-- hide esconde, pra ajudar no JS-->
+    <!-- modal cobre a tela toda-->
+    <div class="content">
+        <!-- content conteúdo-->
+        <div class="header">
+            <h1>Collection Points</h1>
+            <a href="/">Close</a>
+            <!-- importante o # em href, para não ficar recarregando a página -->
+        </div>
+        <form action="/search">
+            <!-- action mostra pra que página eu vou-->
+            <label for="search">City</label>
+            <div class="search field">
+                <input type="text" name="search" placeholder="Search by city">
+                <!-- placehorder coloca um texto dentro da caixa, dentro do input -->
+                <button>
+                    <img src="/assets/search.svg" alt="Search">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
