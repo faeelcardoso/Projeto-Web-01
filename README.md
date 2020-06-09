@@ -3,7 +3,7 @@
 </h1>
 
 <h1>
-    <img src="/nlw/public/assets/ecoleta.gif">
+    <img src="nlw/public/assets/ecoleta.gif">
 </h1>
 
 ## Indice
