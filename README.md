@@ -42,7 +42,7 @@ Ecoleta é um sistema que serve como um marketplace, com a idéia de fazer a con
     # Instalar as dependências
     $ yarn install
 
-    # Instalar o projeto
+    # Iniciar o projeto
     $ yarn start
 
  ```
